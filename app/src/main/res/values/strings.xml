@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Beginner Showcase</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_intro">Welcome to the Android Development groups\' showcase app.
+        Below you will find some sweet mini apps.</string>
+    <string name="title_activity_wesleys_app">Wesley\'s App</string>
+</resources>
