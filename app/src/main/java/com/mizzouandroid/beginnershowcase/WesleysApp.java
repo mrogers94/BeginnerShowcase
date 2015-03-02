@@ -1,7 +1,9 @@
 package com.mizzouandroid.beginnershowcase;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,9 +13,9 @@ public class WesleysApp extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        takePicture();
         setContentView(R.layout.activity_wesleys_app);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -35,5 +37,14 @@ public class WesleysApp extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //Number of image captures
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private void takePicture() {
+        Intent pictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (pictureIntent.resolveActivity(getPackageManager()) != null)
+            startActivityForResult(pictureIntent, REQUEST_IMAGE_CAPTURE);
     }
 }
